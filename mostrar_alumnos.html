@@ -1,0 +1,18 @@
+<!doctype html>
+  {% csrf_token %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Lista de Alumnos de nuestra base de datos</h1>
+    <p>
+        {{ data.f_name}}
+        {{ data.l_name }}
+        {{ data.student_number }}
+        {{ data.dob }}
+    </p>
+     <a href="/">logout</a>
+</body>
+</html>
