@@ -1,0 +1,37 @@
+<!doctype html>
+{% load static %}
+<form  method="POST" class="CursoForm" action="/add_curso_form_submision/">
+  <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/main.css' %}" rel="stylesheet">
+  {% csrf_token %}
+  {% block navbar %}
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-left  text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{% url 'index' %}">Inicio</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+  <h1>Introduce un curso en la base de datos</h1>
+<form method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Introduce el dni para eliminar:</label>
+    
+    <input name="dni" type="text" class="form-control" id="dni" placeholder="dni">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Fecha de inicio del curso:</label>
+    <input type="text" class="form-control" id="fechaInicio" placeholder="Fecha de inicio"name="fechaInicio">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Fecha de finalización del curso:</label>
+    <input type="text" class="form-control" id="fechaFinalizacion" placeholder="Primer Apellido"name="fechaFinalizacion">
+    </div>
+  </div>
+    </div>
+      </div>
+     <input type="submit" value="Submit" name="Submit"  >
+  </div>
+    </div>
+   </div>
+</form>

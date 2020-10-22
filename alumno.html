@@ -1,0 +1,57 @@
+<!doctype html>
+{% load static %}
+<form  method="POST" class="AlumnoForm" action="/add_alumno_form_submision/">
+  {% csrf_token %}
+   <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link href="{% static '/main.css' %}" rel="stylesheet">
+   {% block navbar %}
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-left  text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{% url 'index' %}">Inicio</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+   <h1>Insertar Alumnos en nuestra base de datos</h1>
+<form method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">DNI del alumno:</label>
+    <input name="dni" type="text" class="form-control" id="dni" placeholder="dni">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Nombre del alumno:</label>
+    <input type="text" class="form-control" id="nombre" placeholder="Nombre"name="nombre">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Apellido1 del alumno:</label>
+    <input type="text" class="form-control" id="apellido1" placeholder="Primer Apellido"name="apellido1">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Apellido2 del alumno:</label>
+    <input type="text" class="form-control" id="apellido2" placeholder="Segundo Apellido"name="apellido2">
+    </div>
+    <label for="exampleFormControlInput1">direccion de Email</label>
+    <input type="email" class="form-control" id="email" placeholder="name@example.com"name="email">
+  </div>
+  </div>
+  <label for="exampleFormControlInput1">¿Es repetidor?</label>
+    <input type="checkbox" class="form-control" id="repetidor"name="repetidor">
+  </div>
+  <div class="form-group">
+    {% if cursos %}
+    <label for="exampleFormControlSelect2">Cursos matriculados:</label>
+    <select multiple class="form-control" id="curs">
+      {% for curs in cursos %}
+           <option value='{{ curs.Asignatura }}'>{{ curs.Asignatura }}<option>
+      {% endfor %}
+    </select>
+    {% else %}
+    {% endif %}
+  </div>
+    </div>
+      </div>
+     <input type="submit" value="Submit" name="Submit"  >
+  </div>
+    </div>
+   </div>
+</form>

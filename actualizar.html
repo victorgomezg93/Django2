@@ -1,0 +1,56 @@
+<!doctype html>
+{% load static %}
+<link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+<form  method="POST" class="edit_alumno2" action="/edit_alumno2/">
+  {% csrf_token %}
+  <h1>Introduce la clave primaria para actualizar un registro</h1>
+  <br>
+<form method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Introduce el dni para modificar un Alumno:</label>
+    
+    <input name="dni" type="text" class="form-control" id="dni" placeholder="dni">
+    </div>
+    </div>
+      </div>
+     <input type="submit" value="Submit" name="Submit"  >
+  </div>
+  <br>
+  <br>
+  <br>
+    </div>
+   </div>
+</form>
+<form  method="POST" class="profesor_delete" action="/profesor_delete/">
+  {% csrf_token %}
+<form method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Introduce el PDI para modificar un profesor:</label>
+    
+    <input name="PDI" type="text" class="form-control" id="PDI" placeholder="PDI">
+    </div>
+    </div>
+      </div>
+     <input type="submit" value="Submit" name="Submit"  >
+  </div>
+    </div>
+   </div>
+   <br>
+   <br>
+   <br>
+</form>
+<form  method="POST" class="curso_delete" action="/curso_delete/">
+  {% csrf_token %}
+<form method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Introduce el Curso para modificarlo:</label>
+    
+    <input name="Asignatura" type="text" class="form-control" id="Asignatura" placeholder="Asignatura y año">
+    </div>
+    </div>
+      </div>
+     <input type="submit" value="Submit" name="Submit"  >
+  </div>
+    </div>
+   </div>
+</form>
